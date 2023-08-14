@@ -1,0 +1,80 @@
+@use "variables" as v;
+@use "mixins" as mix;
+
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__input{
+        width: 375px;
+        height: 53px;
+        border-radius: 100px;
+        border: 1px solid v.$paleBlue;
+        padding-left: 45px;
+        font-size: 16px;
+        margin-bottom: 14px;
+
+        &:focus{
+            border: 1px solid v.$paleBlue;
+        }
+
+        &::placeholder{
+            color: v.$paleBlue;
+        }
+    }
+
+    &__btn{
+        width: 422px;
+        height: 53px;
+        background-color: v.$blue;
+        border: none;
+        color: white;
+        border-radius: 100px;
+        font-weight: 600;
+
+        &:hover{
+            cursor: pointer;
+            opacity: 0.9;
+        }
+    
+        &:active{
+            cursor: pointer;
+            opacity: 0.7;
+        }
+    }
+
+    &__error-paragraph{
+        display: none;
+        color: v.$lightRed;
+        font-size: 16px;
+        margin-bottom: 31px;
+    }
+}
+
+@include mix.breakpoint(medium){
+    .main{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 422px 212px;
+        column-gap: 18px;
+        row-gap: 8px;
+
+        &__input{
+            margin-bottom: 0;
+            margin-right: 17px;
+        }
+
+        &__btn{
+            width: 212px;
+            font-weight: 600;
+        }
+
+        &__error-paragraph{
+            grid-row: 3;
+            font-size: 16px;
+            margin-left: 33px;
+            margin-bottom: 0;
+        }
+    }
+}

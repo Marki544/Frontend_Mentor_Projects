@@ -1,0 +1,70 @@
+@use "variables" as v;
+@use "mixins" as mix;
+
+.footer{
+
+    &__wrapper2{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 53px;
+
+        &__copyright{
+            color: v.$gray;
+            font-size: 15px;
+        }
+    }
+
+    .wrapper{
+        display: grid;
+        grid-template-columns: 40px 40px 40px;
+        justify-content: center;
+        gap: 18px;
+
+        &__circle{
+            width: 40px;
+            height: 40px;
+            border: 1px solid v.$paleBlue;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon{
+            fill: v.$blue;
+            }
+
+            .facebook-icon{
+                width: 12px;
+                height: 23px;
+            }
+
+            .twitter-icon{
+                width: 19px;
+                height: 16px;
+            }
+
+            .instagram-icon{
+                width: 21px;
+                height: 21px;
+                color: v.$blue;
+            }
+
+            &:hover{
+                cursor: pointer;
+                background-color: v.$blue;
+
+                .icon{
+                    filter: brightness(0) invert(1);
+            }
+            }
+        }
+
+        @include mix.breakpoint(medium){
+            &__circle{
+                width: 34px;
+                height: 34px;
+            }
+        }
+    }
+}

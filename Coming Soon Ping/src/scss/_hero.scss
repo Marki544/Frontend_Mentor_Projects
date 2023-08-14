@@ -1,0 +1,23 @@
+@use "mixins" as mix;
+
+.hero{
+    display: flex;
+    justify-content: center;
+    margin-top: 95px;
+    margin-bottom: 160px;
+
+    &__image{
+        width: 430px;
+        height: 260px;
+    }
+}
+
+@include mix.breakpoint(medium){
+    .hero{
+
+        &__image{
+            width: 677px;
+            height: 407px;
+        }
+    }
+}

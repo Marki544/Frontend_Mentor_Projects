@@ -1,0 +1,39 @@
+@use "variables" as v;
+@use "mixins" as mix;
+
+.section1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    &__coming-soon-header{
+        font-weight: 300;
+        color: v.$gray;
+        font-size: 31px;
+        margin-bottom: 26px;
+
+        &__bold{
+            color: v.$veryDarkBlue;
+            font-weight: 700;
+        }
+    }
+
+    &__paragraph{
+        color: v.$veryDarkBlue;
+        font-size: 20px;
+        margin-bottom: 44px;
+    }
+}
+
+@include mix.breakpoint(medium){
+    .section1{
+
+        &__coming-soon-header{
+            font-size: 53px;
+        }
+
+        &__paragraph{
+            font-size: 25px;
+        }
+    }
+}
